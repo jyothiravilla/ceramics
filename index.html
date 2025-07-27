@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sara Ceramics</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">JYOTHI<br><span>CERAMICS</span></div>
+    <nav>
+      <a href="#about">About JYOTHI</a>
+      <a href="#contact">Contact JYOTHI</a>
+      <a href="#mugs">Shop Mugs</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>JYOTHI CERAMICS</h1>
+      <hr />
+      <p>Wheel Thrown Pottery Made in LA</p>
+    </div>
+    <a href="#mugs" class="scroll-down">&#x25BC;</a>
+  </section>
+
+  <!-- Mugs Section -->
+  <section id="mugs" class="mugs-section">
+    <h2> Mugs</h2>
+    <div class="mug-grid">
+      <div class="mug-grid">
+  <div class="mug-item">
+    <div class="mug-slideshow">
+      <img src="images/spiralmug3-removebg-preview.png" alt="Mug 1 Alt" class="slide">
+      <img src="images_background_removed/spiralmug1-removebg-preview.png" alt="Mug 1 Alt" class="slide">
+      <button class="prev">&#10094;</button>
+      <button class="next">&#10095;</button>
+    </div>
+    <p>Speckled White Mug – $8</p>
+  </div>
+      <div class="mug-item">
+        <img src="images/spiralinside.jpg" alt="Mug 1">
+        <p>Speckled White Mug – $8</p>
+      </div>
+      <div class="mug-item">
+        <img src="images/bubblemug.jpg" alt="Mug 2">
+        <p>Matte Black Mug – $7</p>
+      </div>
+      <div class="mug-item">
+        <img src="images/fullgreenmug.jpg" alt="Mug 3">
+        <p>Glossy Blue Mug – $5</p>
+      </div>
+      <div class="mug-item">
+        <img src="images/halfgreen2.jpg" alt="Mug 4">
+        <p>Glossy Blue Mug – $5</p>
+      </div>
+      <div class="mug-item">
+        <img src="images/heartmug.jpg" alt="Mug 5">
+        <p>Glossy Blue Mug – $5</p>
+      </div>
+      <div class="mug-item">
+        <img src="images/leafmug.jpg" alt="Mug 6">
+        <p>Glossy Blue Mug – $5</p>
+      </div>
+      <div class="mug-item">
+        <img src="images/lightbubblemug.jpg" alt="Mug 7">
+        <p>Glossy Blue Mug – $5</p>
+      </div>
+      <div class="mug-item">
+        <img src="images/rapunzel1.jpg" alt="Mug ">
+        <p>Glossy Blue Mug – $5</p>
+      </div>
+      <!-- Add more mugs as needed -->
+    </div>
+  </section>
+
+  <script>
+document.querySelectorAll('.mug-slideshow').forEach((slideshow) => {
+  let slides = slideshow.querySelectorAll('.slide');
+  let index = 0;
+
+  const showSlide = (i) => {
+    slides.forEach((slide, idx) => {
+      slide.classList.toggle('active', idx === i);
+    });
+  };
+
+  slideshow.querySelector('.next').addEventListener('click', () => {
+    index = (index + 1) % slides.length;
+    showSlide(index);
+  });
+
+  slideshow.querySelector('.prev').addEventListener('click', () => {
+    index = (index - 1 + slides.length) % slides.length;
+    showSlide(index);
+  });
+
+  showSlide(index);
+});
+</script>
+
+
+</body>
+</html>
