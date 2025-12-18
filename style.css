@@ -1,29 +1,81 @@
-/* Portfolio Sections */
-
-.about-section,
-.contact-section {
-    background: #f7f7f7;
-    color: #000;
-    padding: 4rem 2rem;
-    text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-    .about-section h2,
-    .contact-section h2 {
-        font-size: 2rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .about-section p,
-    .contact-section p {
-        max-width: 600px;
-        margin: auto;
-        line-height: 1.6;
-    }
-
-.mug-item span {
-    display: block;
-    font-size: 0.9rem;
-    color: #555;
-    margin-top: 0.3rem;
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    background: #f6f5f3;
+    color: #111;
 }
+
+/* Layout */
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 260px;
+    padding: 40px 30px;
+    position: fixed;
+    height: 100vh;
+}
+
+    .sidebar h1 {
+        font-size: 20px;
+        letter-spacing: 1px;
+        margin-bottom: 40px;
+    }
+
+        .sidebar h1 span {
+            font-weight: normal;
+            font-size: 14px;
+        }
+
+    /* Navigation */
+    .sidebar nav a,
+    .sidebar nav span {
+        display: block;
+        text-decoration: none;
+        color: #111;
+        font-size: 14px;
+        margin-bottom: 10px;
+    }
+
+    .sidebar nav span {
+        margin-top: 20px;
+        font-weight: bold;
+    }
+
+    .sidebar nav a {
+        padding-left: 10px;
+        opacity: 0.7;
+    }
+
+        .sidebar nav a:hover,
+        .sidebar nav a.active {
+            opacity: 1;
+        }
+
+/* Content area */
+.content {
+    margin-left: 260px;
+    padding: 40px;
+    width: calc(100% - 260px);
+}
+
+/* Image grid */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+    .image-grid img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }

@@ -3,106 +3,43 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Jyothi Ceramics | Portfolio</title>
+    <title>Jyothi Ceramics</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <header>
-        <div class="logo">JYOTHI<br><span>CERAMICS</span></div>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#work">Work</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+    <div class="layout">
 
-    <section class="hero">
-        <div class="hero-text">
-            <h1>JYOTHI CERAMICS</h1>
-            <hr />
-            <p>Wheel-thrown pottery • Los Angeles</p>
-        </div>
-        <a href="#work" class="scroll-down">&#x25BC;</a>
-    </section>
+        <!-- LEFT NAV -->
+        <aside class="sidebar">
+            <h1>JYOTHI<br><span>CERAMICS</span></h1>
 
-    <!-- WORK / PORTFOLIO SECTION -->
-    <section id="work" class="mugs-section">
-        <h2>Selected Works</h2>
+            <nav>
+                <a href="index.html" class="active">Home</a>
 
-        <div class="mug-grid">
-
-            <div class="mug-item">
-                <div class="mug-slideshow">
-                    <img src="images/spiralmug3-removebg-preview.png" class="slide active" alt="Spiral Mug exterior">
-                    <img src="images_background_removed/spiralmug1-removebg-preview.png" class="slide" alt="Spiral Mug interior">
-                    <button class="prev">&#10094;</button>
-                    <button class="next">&#10095;</button>
+                <div class="nav-group">
+                    <span>Ceramics</span>
+                    <a href="mugs.html">Mugs</a>
+                    <a href="bowls.html">Bowls</a>
+                    <a href="vases.html">Vases</a>
                 </div>
-                <p>Spiral Mug Series</p>
-                <span>Stoneware, glaze experiment</span>
+
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </aside>
+
+        <!-- RIGHT CONTENT -->
+        <main class="content">
+            <div class="image-grid">
+                <img src="images/crackbowl.jpg" alt="Mug">
+                <img src="images/bubblemug.jpg" alt="Bowl">
+                <img src="images/bikevase.jpg" alt="Vase">
+                <img src="images/applebowl.jpg" alt="Mug">
             </div>
+        </main>
 
-            <div class="mug-item">
-                <img src="images/bubblemug.jpg" alt="Bubble Mug">
-                <p>Bubble Texture Mug</p>
-                <span>Wheel-thrown stoneware</span>
-            </div>
-
-            <div class="mug-item">
-                <img src="images/fullgreenmug.jpg" alt="Green Mug">
-                <p>Green Glaze Study</p>
-                <span>Gloss glaze tests</span>
-            </div>
-
-            <div class="mug-item">
-                <img src="images/heartmug.jpg" alt="Heart Mug">
-                <p>Heart Motif Mug</p>
-                <span>Carved surface design</span>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="about-section">
-        <h2>About</h2>
-        <p>
-            I am a ceramic artist based in Los Angeles, focusing on wheel-thrown
-            functional pottery. My work explores surface texture, glaze interaction,
-            and subtle imperfections that emerge through the making process.
-        </p>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="contact-section">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:jyothiceramics@email.com">jyothiceramics@email.com</a></p>
-        <p>Instagram: <a href="#">@jyothiceramics</a></p>
-    </section>
-
-    <script>
-        document.querySelectorAll('.mug-slideshow').forEach((slideshow) => {
-        const slides = slideshow.querySelectorAll('.slide');
-        let index = 0;
-
-        const showSlide = (i) => {
-        slides.forEach((slide, idx) => {
-        slide.classList.toggle('active', idx === i);
-        });
-        };
-
-        slideshow.querySelector('.next').addEventListener('click', () => {
-        index = (index + 1) % slides.length;
-        showSlide(index);
-        });
-
-        slideshow.querySelector('.prev').addEventListener('click', () => {
-        index = (index - 1 + slides.length) % slides.length;
-        showSlide(index);
-        });
-        });
-    </script>
+    </div>
 
 </body>
 </html>
