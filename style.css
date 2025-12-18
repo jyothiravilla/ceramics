@@ -1,174 +1,29 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Portfolio Sections */
+
+.about-section,
+.contact-section {
+    background: #f7f7f7;
+    color: #000;
+    padding: 4rem 2rem;
+    text-align: center;
 }
 
-body, html {
-  height: 100%;
-  font-family: 'Helvetica Neue', sans-serif;
-  color: white;
-}
+    .about-section h2,
+    .contact-section h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
 
-/* Header Navigation */
-header {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 30px 60px;
-  z-index: 10;
-}
+    .about-section p,
+    .contact-section p {
+        max-width: 600px;
+        margin: auto;
+        line-height: 1.6;
+    }
 
-.logo {
-  font-size: 14px;
-  line-height: 1.2;
-  font-weight: bold;
-  letter-spacing: 1px;
-}
-
-.logo span {
-  font-weight: normal;
-  font-size: 12px;
-}
-
-nav a {
-  margin-left: 30px;
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-/* Hero Section */
-.hero {
-  background: url('images/bikevase.jpg') no-repeat center center/cover;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  text-align: center;
-}
-
-.hero-text h1 {
-  font-size: 3.5rem;
-  letter-spacing: 2px;
-}
-
-.hero-text hr {
-  width: 100px;
-  border: 1px solid white;
-  margin: 1rem auto;
-}
-
-.hero-text p {
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
-}
-
-/* Scroll Down Indicator */
-.scroll-down {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 2rem;
-  animation: bounce 2s infinite;
-  opacity: 0.7;
-}
-
-@keyframes bounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(10px); }
-}
-
-/* Mugs Section */
-#mugs {
-  background: #fff;
-  color: #000;
-  padding: 4rem 2rem;
-  text-align: center;
-}
-
-#mugs h2 {
-  font-size: 2rem;
-  margin-bottom: 2rem;
-  letter-spacing: 1px;
-}
-
-.mug-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.mug-item img {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.mug-item p {
-  margin-top: 0.8rem;
-  font-weight: bold;
-}
-
-
-.mug-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-}
-
-.mug-item {
-  text-align: center;
-  max-width: 250px;
-  margin: auto;
-}
-
-.mug-slideshow {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1/1; /* Keeps images square */
-  overflow: hidden;
-}
-
-.mug-slideshow img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.mug-slideshow img.active {
-  display: block;
-  position: relative;
-}
-
-.mug-slideshow .prev,
-.mug-slideshow .next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(255,255,255,0.7);
-  border: none;
-  font-size: 18px;
-  cursor: pointer;
-  padding: 4px 8px;
-  z-index: 1;
-}
-
-.mug-slideshow .prev {
-  left: 5px;
-}
-.mug-slideshow .next {
-  right: 5px;
+.mug-item span {
+    display: block;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 0.3rem;
 }
