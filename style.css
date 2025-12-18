@@ -1,0 +1,29 @@
+/* Portfolio Sections */
+
+.about-section,
+.contact-section {
+    background: #f7f7f7;
+    color: #000;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+    .about-section h2,
+    .contact-section h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .about-section p,
+    .contact-section p {
+        max-width: 600px;
+        margin: auto;
+        line-height: 1.6;
+    }
+
+.mug-item span {
+    display: block;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 0.3rem;
+}

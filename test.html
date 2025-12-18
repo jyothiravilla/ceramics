@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sara Ceramics</title>
+  <link rel="stylesheet" href="teststyle.css" />
+</head>
+<body>
+
+  <header>
+    <div class="logo">JYOTHI<br><span>CERAMICS</span></div>
+    <nav>
+      <a href="#about">About JYOTHI</a>
+      <a href="#contact">Contact JYOTHI</a>
+      <a href="#mugs">Shop Mugs</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>JYOTHI CERAMICS</h1>
+      <hr />
+      <p>Wheel Thrown Pottery Made in LA</p>
+    </div>
+    <a href="#mugs" class="scroll-down">&#x25BC;</a>
+  </section>
+  
+  <!-- 🌟 Grid Gallery of Mugs -->
+<section class="mug-gallery">
+  <div class="mug-card" data-name="Speckled White Mug" data-price="$8" data-images="images/spiralinside.jpg,images/spiraloutside.jpg">
+    <img src="images/spiralinside.jpg" alt="Speckled White Mug">
+    <h3>Speckled White Mug</h3>
+    <p>$8</p>
+  </div>
+
+  <div class="mug-card" data-name="Matte Black Mug" data-price="$7" data-images="images/bubblemug.jpg,images/bubblemug-alt.jpg">
+    <img src="images/bubblemug.jpg" alt="Matte Black Mug">
+    <h3>Matte Black Mug</h3>
+    <p>$7</p>
+  </div>
+  <!-- Add more mugs here -->
+</section>
+
+<!-- 🌟 Product Viewer Modal (like Deneen site) -->
+<div id="product-viewer" class="product-modal">
+  <div class="viewer-content">
+    <span class="close">&times;</span>
+    <div class="viewer-left">
+      <img id="viewer-main-img" src="" alt="Featured Mug">
+      <div id="viewer-thumbs" class="viewer-thumbnails"></div>
+    </div>
+    <div class="viewer-right">
+      <h2 id="viewer-title"></h2>
+      <p id="viewer-price"></p>
+      <p class="viewer-description">This handcrafted mug features a unique glaze and shape, perfect for your daily coffee or tea ritual.</p>
+    </div>
+  </div>
+</div>
+<script>
+const cards = document.querySelectorAll('.mug-card');
+const modal = document.getElementById('product-viewer');
+const closeBtn = document.querySelector('.close');
+const mainImg = document.getElementById('viewer-main-img');
+const thumbs = document.getElementById('viewer-thumbs');
+const title = document.getElementById('viewer-title');
+const price = document.getElementById('viewer-price');
+
+cards.forEach(card => {
+  card.addEventListener('click', () => {
+    const images = card.dataset.images.split(',');
+    title.textContent = card.dataset.name;
+    price.textContent = card.dataset.price;
+    mainImg.src = images[0].trim();
+    thumbs.innerHTML = '';
+
+    images.forEach((src, i) => {
+      const thumb = document.createElement('img');
+      thumb.src = src.trim();
+      if (i === 0) thumb.classList.add('active');
+      thumb.addEventListener('click', () => {
+        mainImg.src = src.trim();
+        thumbs.querySelectorAll('img').forEach(t => t.classList.remove('active'));
+        thumb.classList.add('active');
+      });
+      thumbs.appendChild(thumb);
+    });
+
+    modal.style.display = 'flex';
+  });
+});
+
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
+});
+window.addEventListener('click', e => {
+  if (e.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+</script>
+
+</body>
+</html>
