@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blogs - Jyothi Ceramics</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <div class="layout">
+
+        <!-- LEFT NAV -->
+        <aside class="sidebar">
+            <h1>JYOTHI<br><span>CERAMICS</span></h1>
+
+            <nav>
+                <span class="nav-toggle" onclick="navigateTo('main.html')">Home</span>
+
+                <div class="nav-group" id="ceramicsMenu">
+                    <span class="nav-toggle" onclick="toggleCeramics()">Ceramics</span>
+                    <a href="mugs.html" class="ceramic-link hidden">Mugs</a>
+                    <a href="bowls.html" class="ceramic-link hidden">Bowls</a>
+                    <a href="vases.html" class="ceramic-link hidden">Vases</a>
+                </div>
+
+                <span class="nav-toggle" onclick="navigateTo('printmaking.html')">Printmaking</span>
+                <span class="nav-toggle" onclick="navigateTo('about.html')">About</span>
+                <span class="nav-toggle" onclick="navigateTo('blogs.html')">Blogs</span>
+                <span class="nav-toggle" onclick="navigateTo('https://www.instagram.com/jyothi_ceramics/', true)">Instagram</span>
+                <span class="nav-toggle" onclick="navigateTo('contact.html')">Contact Form</span>
+            </nav>
+        </aside>
+
+        <!-- RIGHT CONTENT -->
+        <main class="content">
+            <h2>Blogs</h2>
+            
+            <!-- Blog Article 1 -->
+            <div class="blog-article">
+                <h3>Knight to Know: Nagajyothi Ravilla '25</h3>
+                <img src="images/other/knight.jpg" alt="Nagajyothi Ravilla feature">
+                <p>Featured in Arcadia University's "Knight to Know" series, highlighting student achievements and creative work in ceramics and art. This profile explores the journey of creating unique ceramic pieces and the artistic process behind them.</p>
+                <a href="https://www.arcadia.edu/news/knight-to-know-nagajyothi-ravilla-25/" target="_blank" class="read-button">Read More</a>
+            </div>
+
+            <!-- Blog Article 2 -->
+            <div class="blog-article">
+                <h3>Student Ceramic Creations Come Alive for Philadelphia Museum of Art</h3>
+                <img src="images/other/pma.JPG" alt="Ceramic creations for PMA">
+                <p>An exciting collaboration with the Philadelphia Museum of Art showcasing student ceramic work. This article details how ceramic creations were brought to life for display and the experience of working with one of Philadelphia's premier cultural institutions.</p>
+                <a href="https://www.arcadia.edu/news/student-ceramic-creations-come-alive-for-philadelphia-museum-of-art/" target="_blank" class="read-button">Read More</a>
+            </div>
+        </main>
+
+    </div>
+
+    <script>
+        function toggleCeramics() {
+            const menu = document.getElementById('ceramicsMenu');
+            const links = menu.querySelectorAll('.ceramic-link');
+            links.forEach(link => link.classList.toggle('hidden'));
+        }
+
+        function navigateTo(url, newTab = false) {
+            if (newTab) {
+                window.open(url, '_blank');
+            } else {
+                window.location.href = url;
+            }
+        }
+    </script>
+</body>
+</html>

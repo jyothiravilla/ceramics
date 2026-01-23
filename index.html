@@ -7,39 +7,67 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-    <div class="layout">
-
-        <!-- LEFT NAV -->
-        <aside class="sidebar">
-            <h1>JYOTHI<br><span>CERAMICS</span></h1>
-
-            <nav>
-                <a href="index.html" class="active">Home</a>
-
-                <div class="nav-group">
-                    <span>Ceramics</span>
-                    <a href="mugs.html">Mugs</a>
-                    <a href="bowls.html">Bowls</a>
-                    <a href="vases.html">Vases</a>
-                </div>
-
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-        </aside>
-
-        <!-- RIGHT CONTENT -->
-        <main class="content">
-            <div class="image-grid">
-                <img src="images/crackbowl.jpg" alt="Mug">
-                <img src="images/bubblemug.jpg" alt="Bowl">
-                <img src="images/bikevase.jpg" alt="Vase">
-                <img src="images/applebowl.jpg" alt="Mug">
-            </div>
-        </main>
-
+    <div class="slideshow-container">
+        <div class="hero-name">Jyothi Ravilla</div>
+        <div class="slideshow-wrapper">
+            <img class="slide" src="images/bowls/applebowl.jpg" alt="applebowl">
+                <img class="slide" src="images/bowls/applebowlgreenmug.jpg" alt="applebowlgreenmug">
+                <img class="slide" src="images/bowls/applebowlinside.jpg" alt="applebowlinside">
+                <img class="slide" src="images/bowls/bubblebowl.jpg" alt="bubblebowl">
+                <img class="slide" src="images/bowls/bubblebowl2.jpg" alt="bubblebowl2">
+                <img class="slide" src="images/bowls/crackbowl.jpg" alt="crackbowl">
+                <img class="slide" src="images/bowls/crackbowlback.jpg" alt="crackbowlback">
+                <img class="slide" src="images/bowls/crackbowlinside.jpg" alt="crackbowlinside">
+                <img class="slide" src="images/bowls/leafbowl.jpg" alt="leafbowl">
+                <img class="slide" src="images/bowls/leafbowlinside.jpg" alt="leafbowlinside">
+                <img class="slide" src="images/bowls/lemonbowl.jpg" alt="lemonbowl">
+                <img class="slide" src="images/bowls/lemonbowlinside.jpg" alt="lemonbowlinside">
+                <img class="slide" src="images/bowls/plainplate1.jpg" alt="plainplate1">
+                <img class="slide" src="images/bowls/plate2.jpg" alt="plate2">
+                <img class="slide" src="images/mugs/bubblemug.jpg" alt="bubblemug">
+                <img class="slide" src="images/mugs/darsha.jpg" alt="darsha">
+                <img class="slide" src="images/mugs/fullgreenmug.jpg" alt="fullgreenmug">
+                <img class="slide" src="images/mugs/halfgreen2.jpg" alt="halfgreen2">
+                <img class="slide" src="images/mugs/halfgreeninside.jpg" alt="halfgreeninside">
+                <img class="slide" src="images/mugs/heartmug.jpg" alt="heartmug">
+                <img class="slide" src="images/mugs/leafmug.jpg" alt="leafmug">
+                <img class="slide" src="images/mugs/leafmug2.jpg" alt="leafmug2">
+                <img class="slide" src="images/mugs/leafmuginside.jpg" alt="leafmuginside">
+                <img class="slide" src="images/mugs/lightbubblemug.jpg" alt="lightbubblemug">
+                <img class="slide" src="images/mugs/lightbubblemuginside.jpg" alt="lightbubblemuginside">
+                <img class="slide" src="images/mugs/spiralinside.jpg" alt="spiralinside">
+                <img class="slide" src="images/mugs/spiralmug1.jpg" alt="spiralmug1">
+                <img class="slide" src="images/mugs/spiralmug3.jpg" alt="spiralmug3">
+                <img class="slide" src="images/vases/bikevaseCopy.JPG" alt="bikevaseCopy">
+                <img class="slide" src="images/vases/bikevaseflowers.jpg" alt="bikevaseflowers">
+                <img class="slide" src="images/vases/masonvase.jpg" alt="masonvase">
+                <img class="slide" src="images/vases/myfavvase.jpg" alt="myfavvase">
+                <img class="slide" src="images/vases/myfavvase2.jpg" alt="myfavvase2">
+                <img class="slide" src="images/vases/rapunzel1.jpg" alt="rapunzel1">
+                <img class="slide" src="images/vases/rapunzelinside.jpg" alt="rapunzelinside">
+                <img class="slide" src="images/vases/rapunzellantern.jpg" alt="rapunzellantern">
+        </div>
+        <a href="main.html" class="enter-btn">ENTER</a>
     </div>
 
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            showSlide(currentSlide);
+        }
+
+        // Initialize
+        showSlide(0);
+        setInterval(nextSlide, 2000); // Change slide every 4 seconds
+    </script>
 </body>
 </html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - Jyothi Ceramics</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <div class="layout">
+
+        <!-- LEFT NAV -->
+        <aside class="sidebar">
+            <h1>JYOTHI<br><span>CERAMICS</span></h1>
+
+            <nav>
+                <span class="nav-toggle" onclick="navigateTo('main.html')">Home</span>
+
+                <div class="nav-group" id="ceramicsMenu">
+                    <span class="nav-toggle" onclick="toggleCeramics()">Ceramics</span>
+                    <a href="mugs.html" class="ceramic-link hidden">Mugs</a>
+                    <a href="bowls.html" class="ceramic-link hidden">Bowls</a>
+                    <a href="vases.html" class="ceramic-link hidden">Vases</a>
+                </div>
+
+                <span class="nav-toggle" onclick="navigateTo('printmaking.html')">Printmaking</span>
+                <span class="nav-toggle" onclick="navigateTo('about.html')">About</span>
+                <span class="nav-toggle" onclick="navigateTo('blogs.html')">Blogs</span>
+                <span class="nav-toggle" onclick="navigateTo('https://instagram.com', true)">Instagram</span>
+                <span class="nav-toggle" onclick="navigateTo('contact.html')">Contact Form</span>
+            </nav>
+        </aside>
+
+        <!-- RIGHT CONTENT -->
+        <main class="content">
+            <h2>Contact Us</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </main>
+
+    </div>
+
+    <script>
+        function toggleCeramics() {
+            const menu = document.getElementById('ceramicsMenu');
+            const links = menu.querySelectorAll('.ceramic-link');
+            links.forEach(link => link.classList.toggle('hidden'));
+        }
+
+        function navigateTo(url, newTab = false) {
+            if (newTab) {
+                window.open(url, '_blank');
+            } else {
+                window.location.href = url;
+            }
+        }
+    </script>
+</body>
+</html>
