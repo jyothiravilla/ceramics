@@ -100,7 +100,7 @@ h1, h2, h3, h4, h5, h6 {
     position: fixed;
     top: 20px;
     left: 20px;
-    z-index: 1001;
+    z-index: 1002;
     background: none;
     border: none;
     padding: 0;
@@ -123,6 +123,29 @@ h1, h2, h3, h4, h5, h6 {
 
 .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Mobile menu backdrop */
+body.menu-open::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    display: none;
+}
+
+body.menu-open .hamburger {
+    z-index: 1002;
+}
+
+@media (max-width: 768px) {
+    body.menu-open::before {
+        display: block;
+    }
 }
 
 /* Sidebar */

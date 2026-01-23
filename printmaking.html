@@ -58,6 +58,22 @@
     </div>
 
     <script>
+        function toggleMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const sidebar = document.getElementById('sidebar');
+            hamburger.classList.toggle('active');
+            sidebar.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        }
+
+        function closeMobileMenu() {
+            const hamburger = document.querySelector('.hamburger');
+            const sidebar = document.getElementById('sidebar');
+            hamburger.classList.remove('active');
+            sidebar.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        }
+
         function toggleCeramics() {
             const menu = document.getElementById('ceramicsMenu');
             const links = menu.querySelectorAll('.ceramic-link');
