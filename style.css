@@ -156,7 +156,6 @@ body.menu-open .hamburger {
     height: 100vh;
     background: white;
     z-index: 1000;
-    overflow-y: auto;
 }
 
     .sidebar h1 {
@@ -183,16 +182,30 @@ body.menu-open .hamburger {
     .sidebar nav span {
         margin-top: 20px;
         font-weight: normal;
+        transition: all 0.3s ease;
+    }
+
+    .sidebar nav span:hover {
+        color: #000;
+        font-weight: bold;
     }
 
     .sidebar nav a {
         padding-left: 10px;
         opacity: 0.7;
+        font-size: 18px;
+        transition: all 0.3s ease;
     }
 
         .sidebar nav a:hover,
         .sidebar nav a.active {
             opacity: 1;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .sidebar nav a:hover {
+            color: #000;
         }
 
     .nav-toggle {
@@ -225,6 +238,14 @@ body.menu-open .hamburger {
         object-position: center;
         background: #eee;
         border-radius: 8px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        cursor: pointer;
+    }
+
+    .image-grid img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
     }
 
     @media (max-width: 1200px) {
