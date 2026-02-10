@@ -302,6 +302,8 @@ body.menu-open .hamburger {
     
     .hamburger {
         display: flex;
+        left: auto;
+        right: 20px;
     }
     
     .sidebar {
